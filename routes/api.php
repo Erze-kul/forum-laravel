@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForumController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/forum', function (Request $request) {
-    return response('Test API', 200)
-        ->header('Content-Type', 'application/json');
-});
+Route::get('forum/topics', [ForumController::class, 'topics']);
+Route::get('forum/topic/{id}', [ForumController::class, 'topic']);
+Route::get('forum/topic/{id}/comments', [ForumController::class, 'getComments']);
+Route::delete('forum/topic/comment/{id}', [ForumController::class, 'removeComment']);
+Route::delete('forum/topic/{id}', [ForumController::class, 'removeTopic']);
+Route::post('forum/topic', [ForumController::class, 'addTopic']);
+Route::post('forum/topic/{id}/comment', [ForumController::class, 'addComment']);
