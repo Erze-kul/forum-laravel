@@ -3,13 +3,16 @@
 namespace Tests\Unit;
 
 use App\Http\Controllers\ForumController;
+use App\Models\Comment;
 use App\Models\Topic;
+use App\Models\User;
 use App\Repositories\CommentRepository;
 use App\Repositories\TopicRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class ForumControllerTest extends TestCase
 {
@@ -33,15 +36,48 @@ class ForumControllerTest extends TestCase
      */
     private $controller;
 
+    /**
+     * @var Topic
+     */
+    private $topic;
+
+    /**
+     * @var Comment
+     */
+    private $comment;
+
+
     public function __construct()
     {
         parent::__construct();
+        $this->setUp();
 
         $this->userRepository = $this->createMock(UserRepository::class);
         $this->topicRepository = $this->createMock(TopicRepository::class);
         $this->commentRepository = $this->createMock(CommentRepository::class);
 
         $this->controller = new ForumController($this->topicRepository, $this->commentRepository, $this->userRepository);
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $faker = \Faker\Factory::create('ru_RU');
+        $this->topic = Topic::create(
+            [
+                'title' => $faker->sentence(5),
+                'body' => $faker->realText(),
+                'user_id' => mt_rand(1, 15),
+            ]
+        );
+        $this->comment = Comment::create(
+            [
+                'body' => '',
+                'commentable_id' => $this->topic->id,
+                'commentable_type' => Topic::class,
+                'user_id' => mt_rand(1, 15),
+            ]
+        );
     }
 
     public function testEmptyTopics()
@@ -120,5 +156,53 @@ class ForumControllerTest extends TestCase
 
         $this->assertEquals($result, $this->controller->getComments(1));
     }
+
+    public function testRemoveTopic()
+    {
+        self::assertNotNull(Topic::find($this->topic->id));
+        $this->topicRepository->method('findOrFail')->willReturn($this->topic);
+        $this->controller->removeTopic($this->topic->id);
+        self::assertNull(Topic::find($this->topic->id));
+    }
+
+    public function testRemoveComment()
+    {
+        self::assertNotNull(Comment::find($this->comment->id));
+        $this->commentRepository->method('findOrFail')->willReturn($this->comment);
+        $this->controller->removeComment($this->comment->id);
+        self::assertNull(Comment::find($this->comment->id));
+    }
+
+    public function testAddTopic()
+    {
+        $r = new Request([
+            'user_id' => 1,
+            'title' => 'title',
+            'body' => 'body',
+        ]);
+
+        $user = $this->createMock(User::class);
+        $this->userRepository->method('findOrFail')->willReturn($user);
+        $this->topicRepository->expects(self::once())->method('create')->willReturn($this->topic);
+        $result = $this->controller->addTopic($r);
+        self::assertEquals($this->topic, $result);
+    }
+
+    public function testAddComment()
+    {
+        $r = new Request([
+            'user_id' => 1,
+            'body' => 'body',
+            'commentable_id' => 1,
+        ]);
+
+        $user = $this->createMock(User::class);
+        $this->userRepository->method('findOrFail')->willReturn($user);
+        $this->topicRepository->method('findOrFail')->willReturn($this->topic);
+        $this->commentRepository->expects(self::once())->method('create')->willReturn($this->comment);
+        $result = $this->controller->addComment($r);
+        self::assertEquals($this->comment, $result);
+    }
+
 
 }
