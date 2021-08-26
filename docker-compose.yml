@@ -3,20 +3,24 @@ version: "3.9"
 
 services:
   database:
-    image: postgres
-    container_name: database
-    restart: unless-stopped
+    container_name: ${PROJECT_NAME}_database
+    restart: always
+    build:
+      context: ./docker/postgres
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: secret
-      POSTGRES_DB: forum
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+      PGDATA: ./postgres-data
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
+    env_file:
+        - .env
     ports:
       - '5432:5432'
 
   php-apache:
-    container_name: php-apache
+    container_name: ${PROJECT_NAME}_php-apache
     build:
       context: ./docker/php
     ports:
