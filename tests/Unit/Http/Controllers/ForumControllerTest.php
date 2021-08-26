@@ -120,7 +120,7 @@ class ForumControllerTest extends TestCase
             ]
         );
 
-        $this->topicRepository->method('findOrFail')->willReturn($result);
+        $this->topicRepository->method('find')->willReturn($result);
         $this->assertEquals($result, $this->controller->topic(8));
     }
 
@@ -152,7 +152,7 @@ class ForumControllerTest extends TestCase
         $relations->method('getResults')->willReturn($result);
         $topic = $this->createMock(Topic::class);
         $topic->method('comments')->willReturn($relations);
-        $this->topicRepository->method('findOrFail')->willReturn($topic);
+        $this->topicRepository->method('find')->willReturn($topic);
 
         $this->assertEquals($result, $this->controller->getComments(1));
     }
@@ -160,7 +160,7 @@ class ForumControllerTest extends TestCase
     public function testRemoveTopic()
     {
         self::assertNotNull(Topic::find($this->topic->id));
-        $this->topicRepository->method('findOrFail')->willReturn($this->topic);
+        $this->topicRepository->method('find')->willReturn($this->topic);
         $this->controller->removeTopic($this->topic->id);
         self::assertNull(Topic::find($this->topic->id));
     }
@@ -168,7 +168,7 @@ class ForumControllerTest extends TestCase
     public function testRemoveComment()
     {
         self::assertNotNull(Comment::find($this->comment->id));
-        $this->commentRepository->method('findOrFail')->willReturn($this->comment);
+        $this->commentRepository->method('find')->willReturn($this->comment);
         $this->controller->removeComment($this->comment->id);
         self::assertNull(Comment::find($this->comment->id));
     }
@@ -182,7 +182,7 @@ class ForumControllerTest extends TestCase
         ]);
 
         $user = $this->createMock(User::class);
-        $this->userRepository->method('findOrFail')->willReturn($user);
+        $this->userRepository->method('find')->willReturn($user);
         $this->topicRepository->expects(self::once())->method('create')->willReturn($this->topic);
         $result = $this->controller->addTopic($r);
         self::assertEquals($this->topic, $result);
@@ -193,14 +193,13 @@ class ForumControllerTest extends TestCase
         $r = new Request([
             'user_id' => 1,
             'body' => 'body',
-            'commentable_id' => 1,
         ]);
 
         $user = $this->createMock(User::class);
-        $this->userRepository->method('findOrFail')->willReturn($user);
-        $this->topicRepository->method('findOrFail')->willReturn($this->topic);
+        $this->userRepository->method('find')->willReturn($user);
+        $this->topicRepository->method('find')->willReturn($this->topic);
         $this->commentRepository->expects(self::once())->method('create')->willReturn($this->comment);
-        $result = $this->controller->addComment($r);
+        $result = $this->controller->addComment($r, 1);
         self::assertEquals($this->comment, $result);
     }
 
