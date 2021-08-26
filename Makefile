@@ -6,7 +6,6 @@ RT = $(shell pwd)
 
 export
 
-
 define print
 	printf " \033[33m[%s]\033[0m \033[32m%s\033[0m\n" $1 $2
 endef
@@ -58,3 +57,6 @@ ifeq (,$(wildcard $(envfile)))
 else
 	@echo '.env already exists, skipping copying'
 endif
+
+docs:
+	@docker-compose exec --user www-data php-apache php artisan scribe:generate
