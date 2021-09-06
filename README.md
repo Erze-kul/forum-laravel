@@ -1,6 +1,6 @@
-##Требования (Requirements)
+## Требования (Requirements)
 
-* linux system
+* linux system (Ubuntu 20.04)
 * docker 19.03.0+
 * docker-compose 1.27.0+
 * make
@@ -14,7 +14,7 @@
 - выполнит посев бд
 - установит ключ
 
-## Запуск
+## Запуск (форум доступен по http://localhost:8080/)
 ```bash
    make up
 ```
@@ -34,7 +34,7 @@
    make test
 ```
 
-## Генерация документации, доступной по пути /docs
+## Генерация документации, доступной по пути http://localhost:8080/docs
 ```bash
    make docs
 ```
