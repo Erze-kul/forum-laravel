@@ -7,6 +7,143 @@ servers:
   -
     url: 'http://localhost:8080'
 paths:
+  /api/users:
+    get:
+      summary: 'GET users'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    name: 'Mitchell Goodwin'
+                    email: janae11@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 2
+                    name: 'Prof. Raleigh O''Kon'
+                    email: rylee.krajcik@example.com
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 3
+                    name: 'Karianne Hoppe'
+                    email: kendra69@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 4
+                    name: 'Keenan Cronin II'
+                    email: chaz.kohler@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 5
+                    name: 'Felipe Schuster II'
+                    email: ucrona@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 6
+                    name: 'Miss Ellen Zulauf'
+                    email: hessel.lemuel@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 7
+                    name: 'Margot Runolfsson MD'
+                    email: dorian84@example.com
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 8
+                    name: 'Ms. Maeve Morar'
+                    email: weissnat.berta@example.net
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 9
+                    name: 'Lavon Cronin'
+                    email: maximilian.torphy@example.com
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 10
+                    name: 'Miss Miracle Rempel PhD'
+                    email: bogan.erick@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 11
+                    name: 'Clovis Romaguera'
+                    email: ebert.krista@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 12
+                    name: 'Miss Gabriella Bartell III'
+                    email: sipes.susana@example.net
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 13
+                    name: 'Mr. Raheem Wolff'
+                    email: sterling99@example.net
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 14
+                    name: 'Mr. Russ Kozey IV'
+                    email: mattie.west@example.net
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+                  -
+                    id: 15
+                    name: 'Gudrun Hudson'
+                    email: kelli51@example.org
+                    email_verified_at: '2021-08-26T12:20:21.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
+      tags:
+        - Endpoints
+      security: []
   /api/forum/topics:
     get:
       summary: 'GET topics'
@@ -38,46 +175,25 @@ paths:
                 example:
                   -
                     id: 1
-                    title: 'Aliquid ex ut quia eum.'
-                    body: 'Или же просто восклицания: «черви! червоточина! пикенция!» или: «пикендрас! пичурущух! пичура!» и даже бузиной, подлец, затирает; но — из комнаты не было мебели, хотя и было говорено в первые — дни!.'
-                    user_id: 3
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
+                    title: 'Architecto est doloribus omnis quaerat et.'
+                    body: 'Глава третья А Чичиков от нечего делать занялся, находясь позади рассматриваньем всего просторного его оклада. Как взглянул он на постель, она опустилась под ним кренделем, заснул в ту же минуту.'
+                    user_id: 2
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
                   -
                     id: 2
-                    title: 'Iste iusto incidunt quia.'
-                    body: 'Как несметное множество церквей, монастырей с куполами, главами, крестами, рассыпано на святой, благочестивой Руси, так несметное множество племен, поколений, народов толпится, пестреет и мечется по.'
-                    user_id: 2
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
+                    title: 'Non enim veritatis placeat.'
+                    body: 'Чичиков узнал Ноздрева, того самого, с которым бы в ход и жил бы ты без ружья, как без шапки. Эх, брат Чичиков, то есть что Петрушка ходил в несколько минут перед дверями гостиной, взаимно упрашивая.'
+                    user_id: 5
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
                   -
                     id: 3
-                    title: 'Possimus in sed voluptatem est.'
-                    body: 'Но ведь что, главное, в ней просто, она скажет, что ей вздумается, засмеется, где захочет засмеяться. Из нее все можно сделать, она может быть счастия или — так прямо направо. — Направо? — отозвался.'
+                    title: 'Nesciunt porro porro ut tenetur hic maxime.'
+                    body: 'Да вот теперь у тебя за жидовское побуждение. Ты бы должен — просто квас. Вообрази, не клико, а какое-то клико-матрадура, это — такая бестия, подсел к ней скорее! — Да, хорошая будет собака. — А на.'
                     user_id: 9
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 4
-                    title: test
-                    body: test
-                    user_id: 1
-                    created_at: '2021-08-25T12:28:00.000000Z'
-                    updated_at: '2021-08-25T12:28:00.000000Z'
-                  -
-                    id: 5
-                    title: test
-                    body: test
-                    user_id: 1
-                    created_at: '2021-08-25T12:28:12.000000Z'
-                    updated_at: '2021-08-25T12:28:12.000000Z'
-                  -
-                    id: 6
-                    title: new
-                    body: body
-                    user_id: 1
-                    created_at: '2021-08-26T05:21:12.000000Z'
-                    updated_at: '2021-08-26T05:21:12.000000Z'
+                    created_at: '2021-08-26T12:20:21.000000Z'
+                    updated_at: '2021-08-26T12:20:21.000000Z'
       tags:
         - Endpoints
       security: []
@@ -138,7 +254,7 @@ paths:
         in: path
         name: id
         description: 'Идентификатор поста'
-        example: 15
+        example: 20
         required: true
         schema:
           type: integer
@@ -162,23 +278,13 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        404:
           description: ''
           content:
-            application/json:
+            text/plain:
               schema:
-                type: array
-                items:
-                  type: object
-                example:
-                  -
-                    id: 21
-                    body: eeeeeeeeeeeeeeeeee
-                    commentable_id: 6
-                    commentable_type: App\Models\Topic
-                    user_id: 1
-                    created_at: '2021-08-26T05:25:00.000000Z'
-                    updated_at: '2021-08-26T05:25:00.000000Z'
+                type: string
+                example: 'Post is not exists'
       tags:
         - Endpoints
       security: []
@@ -187,7 +293,7 @@ paths:
         in: path
         name: id
         description: 'Идентификатор поста'
-        example: 6
+        example: 4
         required: true
         schema:
           type: integer
@@ -219,7 +325,7 @@ paths:
         in: path
         name: id
         description: 'Идентификатор комментария'
-        example: 16
+        example: 9
         required: true
         schema:
           type: integer
@@ -315,147 +421,10 @@ paths:
         in: path
         name: id
         description: 'The ID of the topic.'
-        example: 2
+        example: 10
         required: true
         schema:
           type: integer
-  /api/users:
-    get:
-      summary: 'GET users'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                example:
-                  -
-                    id: 1
-                    name: 'Selina Labadie'
-                    email: szemlak@example.net
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 2
-                    name: 'Prof. Kiarra Gerlach V'
-                    email: beaulah90@example.net
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 3
-                    name: 'Prof. Ayden Jenkins'
-                    email: winston.gutmann@example.org
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 4
-                    name: 'Prof. Rickey Nolan Jr.'
-                    email: braden58@example.com
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 5
-                    name: 'Ari Homenick'
-                    email: paige15@example.com
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 6
-                    name: 'Maximillian Gottlieb'
-                    email: marilie.botsford@example.org
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 7
-                    name: 'Ms. Aliya Bradtke DVM'
-                    email: myah19@example.com
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 8
-                    name: 'Reina Reichert'
-                    email: jean42@example.org
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 9
-                    name: 'Corine Smitham'
-                    email: zprice@example.com
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 10
-                    name: 'Mr. Caden Walter PhD'
-                    email: jennings.mcglynn@example.com
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 11
-                    name: 'Sasha Jast'
-                    email: hansen.ocie@example.com
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 12
-                    name: 'Rigoberto Koss'
-                    email: treutel.carol@example.org
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 13
-                    name: 'Rowland Hermann'
-                    email: kian.emard@example.com
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 14
-                    name: 'King Huel DVM'
-                    email: cruz.block@example.net
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-                  -
-                    id: 15
-                    name: 'Pearlie Christiansen'
-                    email: hamill.ricardo@example.net
-                    email_verified_at: '2021-08-23T14:44:54.000000Z'
-                    created_at: '2021-08-23T14:44:54.000000Z'
-                    updated_at: '2021-08-23T14:44:54.000000Z'
-      tags:
-        - Endpoints
-      security: []
 tags:
   -
     name: Endpoints

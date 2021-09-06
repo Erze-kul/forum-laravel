@@ -73,6 +73,218 @@ You can switch the language used with the tabs at the top right (or from the nav
 
     
 
+            <h2 id="endpoints-GETapi-users">GET users</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-users">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8080/api/users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-users">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">[
+    {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Mitchell Goodwin&quot;,
+        &quot;email&quot;: &quot;janae11@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Prof. Raleigh O'Kon&quot;,
+        &quot;email&quot;: &quot;rylee.krajcik@example.com&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 3,
+        &quot;name&quot;: &quot;Karianne Hoppe&quot;,
+        &quot;email&quot;: &quot;kendra69@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 4,
+        &quot;name&quot;: &quot;Keenan Cronin II&quot;,
+        &quot;email&quot;: &quot;chaz.kohler@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;name&quot;: &quot;Felipe Schuster II&quot;,
+        &quot;email&quot;: &quot;ucrona@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 6,
+        &quot;name&quot;: &quot;Miss Ellen Zulauf&quot;,
+        &quot;email&quot;: &quot;hessel.lemuel@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 7,
+        &quot;name&quot;: &quot;Margot Runolfsson MD&quot;,
+        &quot;email&quot;: &quot;dorian84@example.com&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 8,
+        &quot;name&quot;: &quot;Ms. Maeve Morar&quot;,
+        &quot;email&quot;: &quot;weissnat.berta@example.net&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 9,
+        &quot;name&quot;: &quot;Lavon Cronin&quot;,
+        &quot;email&quot;: &quot;maximilian.torphy@example.com&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 10,
+        &quot;name&quot;: &quot;Miss Miracle Rempel PhD&quot;,
+        &quot;email&quot;: &quot;bogan.erick@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 11,
+        &quot;name&quot;: &quot;Clovis Romaguera&quot;,
+        &quot;email&quot;: &quot;ebert.krista@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 12,
+        &quot;name&quot;: &quot;Miss Gabriella Bartell III&quot;,
+        &quot;email&quot;: &quot;sipes.susana@example.net&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 13,
+        &quot;name&quot;: &quot;Mr. Raheem Wolff&quot;,
+        &quot;email&quot;: &quot;sterling99@example.net&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 14,
+        &quot;name&quot;: &quot;Mr. Russ Kozey IV&quot;,
+        &quot;email&quot;: &quot;mattie.west@example.net&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 15,
+        &quot;name&quot;: &quot;Gudrun Hudson&quot;,
+        &quot;email&quot;: &quot;kelli51@example.org&quot;,
+        &quot;email_verified_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-users" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-users"></code></pre>
+</span>
+<span id="execution-error-GETapi-users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-users"></code></pre>
+</span>
+<form id="form-GETapi-users" data-method="GET"
+      data-path="api/users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-users', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-users"
+                    onclick="tryItOut('GETapi-users');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-users"
+                    onclick="cancelTryOut('GETapi-users');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-users" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/users</code></b>
+        </p>
+                    </form>
+
             <h2 id="endpoints-GETapi-forum-topics">GET topics</h2>
 
 <p>
@@ -115,7 +327,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre>
         </details>         <pre>
@@ -123,51 +335,27 @@ access-control-allow-origin: *
 <code class="language-json">[
     {
         &quot;id&quot;: 1,
-        &quot;title&quot;: &quot;Aliquid ex ut quia eum.&quot;,
-        &quot;body&quot;: &quot;Или же просто восклицания: &laquo;черви! червоточина! пикенция!&raquo; или: &laquo;пикендрас! пичурущух! пичура!&raquo; и даже бузиной, подлец, затирает; но &mdash; из комнаты не было мебели, хотя и было говорено в первые &mdash; дни!.&quot;,
-        &quot;user_id&quot;: 3,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
+        &quot;title&quot;: &quot;Architecto est doloribus omnis quaerat et.&quot;,
+        &quot;body&quot;: &quot;Глава третья А Чичиков от нечего делать занялся, находясь позади рассматриваньем всего просторного его оклада. Как взглянул он на постель, она опустилась под ним кренделем, заснул в ту же минуту.&quot;,
+        &quot;user_id&quot;: 2,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
     },
     {
         &quot;id&quot;: 2,
-        &quot;title&quot;: &quot;Iste iusto incidunt quia.&quot;,
-        &quot;body&quot;: &quot;Как несметное множество церквей, монастырей с куполами, главами, крестами, рассыпано на святой, благочестивой Руси, так несметное множество племен, поколений, народов толпится, пестреет и мечется по.&quot;,
-        &quot;user_id&quot;: 2,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
+        &quot;title&quot;: &quot;Non enim veritatis placeat.&quot;,
+        &quot;body&quot;: &quot;Чичиков узнал Ноздрева, того самого, с которым бы в ход и жил бы ты без ружья, как без шапки. Эх, брат Чичиков, то есть что Петрушка ходил в несколько минут перед дверями гостиной, взаимно упрашивая.&quot;,
+        &quot;user_id&quot;: 5,
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
     },
     {
         &quot;id&quot;: 3,
-        &quot;title&quot;: &quot;Possimus in sed voluptatem est.&quot;,
-        &quot;body&quot;: &quot;Но ведь что, главное, в ней просто, она скажет, что ей вздумается, засмеется, где захочет засмеяться. Из нее все можно сделать, она может быть счастия или &mdash; так прямо направо. &mdash; Направо? &mdash; отозвался.&quot;,
+        &quot;title&quot;: &quot;Nesciunt porro porro ut tenetur hic maxime.&quot;,
+        &quot;body&quot;: &quot;Да вот теперь у тебя за жидовское побуждение. Ты бы должен &mdash; просто квас. Вообрази, не клико, а какое-то клико-матрадура, это &mdash; такая бестия, подсел к ней скорее! &mdash; Да, хорошая будет собака. &mdash; А на.&quot;,
         &quot;user_id&quot;: 9,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 4,
-        &quot;title&quot;: &quot;test&quot;,
-        &quot;body&quot;: &quot;test&quot;,
-        &quot;user_id&quot;: 1,
-        &quot;created_at&quot;: &quot;2021-08-25T12:28:00.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-25T12:28:00.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 5,
-        &quot;title&quot;: &quot;test&quot;,
-        &quot;body&quot;: &quot;test&quot;,
-        &quot;user_id&quot;: 1,
-        &quot;created_at&quot;: &quot;2021-08-25T12:28:12.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-25T12:28:12.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 6,
-        &quot;title&quot;: &quot;new&quot;,
-        &quot;body&quot;: &quot;body&quot;,
-        &quot;user_id&quot;: 1,
-        &quot;created_at&quot;: &quot;2021-08-26T05:21:12.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-26T05:21:12.000000Z&quot;
+        &quot;created_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-26T12:20:21.000000Z&quot;
     }
 ]</code>
  </pre>
@@ -225,12 +413,12 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8080/api/forum/topic/15" \
+    --get "http://localhost:8080/api/forum/topic/20" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8080/api/forum/topic/15"
+    "http://localhost:8080/api/forum/topic/20"
 );
 
 const headers = {
@@ -255,7 +443,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre>
         </details>         <pre>
@@ -325,12 +513,12 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8080/api/forum/topic/6/comments" \
+    --get "http://localhost:8080/api/forum/topic/4/comments" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8080/api/forum/topic/6/comments"
+    "http://localhost:8080/api/forum/topic/4/comments"
 );
 
 const headers = {
@@ -346,7 +534,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-forum-topic--id--comments">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
@@ -355,22 +543,12 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre>
         </details>         <pre>
 
-<code class="language-json">[
-    {
-        &quot;id&quot;: 21,
-        &quot;body&quot;: &quot;eeeeeeeeeeeeeeeeee&quot;,
-        &quot;commentable_id&quot;: 6,
-        &quot;commentable_type&quot;: &quot;App\\Models\\Topic&quot;,
-        &quot;user_id&quot;: 1,
-        &quot;created_at&quot;: &quot;2021-08-26T05:25:00.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-26T05:25:00.000000Z&quot;
-    }
-]</code>
+<code class="language-json">Post is not exists</code>
  </pre>
     </span>
 <span id="execution-results-GETapi-forum-topic--id--comments" hidden>
@@ -435,12 +613,12 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8080/api/forum/topic/comment/16" \
+    "http://localhost:8080/api/forum/topic/comment/9" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8080/api/forum/topic/comment/16"
+    "http://localhost:8080/api/forum/topic/comment/9"
 );
 
 const headers = {
@@ -518,12 +696,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8080/api/forum/topic/7" \
+    "http://localhost:8080/api/forum/topic/6" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8080/api/forum/topic/7"
+    "http://localhost:8080/api/forum/topic/6"
 );
 
 const headers = {
@@ -714,7 +892,7 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8080/api/forum/topic/2/comment" \
+    "http://localhost:8080/api/forum/topic/10/comment" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -724,7 +902,7 @@ fetch(url, {
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8080/api/forum/topic/2/comment"
+    "http://localhost:8080/api/forum/topic/10/comment"
 );
 
 const headers = {
@@ -813,218 +991,6 @@ fetch(url, {
 <p>Тело комментария</p>        </p>
     
     </form>
-
-            <h2 id="endpoints-GETapi-users">GET users</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-users">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8080/api/users" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8080/api/users"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-GETapi-users">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
-access-control-allow-origin: *
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">[
-    {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Selina Labadie&quot;,
-        &quot;email&quot;: &quot;szemlak@example.net&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 2,
-        &quot;name&quot;: &quot;Prof. Kiarra Gerlach V&quot;,
-        &quot;email&quot;: &quot;beaulah90@example.net&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 3,
-        &quot;name&quot;: &quot;Prof. Ayden Jenkins&quot;,
-        &quot;email&quot;: &quot;winston.gutmann@example.org&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 4,
-        &quot;name&quot;: &quot;Prof. Rickey Nolan Jr.&quot;,
-        &quot;email&quot;: &quot;braden58@example.com&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 5,
-        &quot;name&quot;: &quot;Ari Homenick&quot;,
-        &quot;email&quot;: &quot;paige15@example.com&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 6,
-        &quot;name&quot;: &quot;Maximillian Gottlieb&quot;,
-        &quot;email&quot;: &quot;marilie.botsford@example.org&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 7,
-        &quot;name&quot;: &quot;Ms. Aliya Bradtke DVM&quot;,
-        &quot;email&quot;: &quot;myah19@example.com&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 8,
-        &quot;name&quot;: &quot;Reina Reichert&quot;,
-        &quot;email&quot;: &quot;jean42@example.org&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 9,
-        &quot;name&quot;: &quot;Corine Smitham&quot;,
-        &quot;email&quot;: &quot;zprice@example.com&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 10,
-        &quot;name&quot;: &quot;Mr. Caden Walter PhD&quot;,
-        &quot;email&quot;: &quot;jennings.mcglynn@example.com&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 11,
-        &quot;name&quot;: &quot;Sasha Jast&quot;,
-        &quot;email&quot;: &quot;hansen.ocie@example.com&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 12,
-        &quot;name&quot;: &quot;Rigoberto Koss&quot;,
-        &quot;email&quot;: &quot;treutel.carol@example.org&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 13,
-        &quot;name&quot;: &quot;Rowland Hermann&quot;,
-        &quot;email&quot;: &quot;kian.emard@example.com&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 14,
-        &quot;name&quot;: &quot;King Huel DVM&quot;,
-        &quot;email&quot;: &quot;cruz.block@example.net&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 15,
-        &quot;name&quot;: &quot;Pearlie Christiansen&quot;,
-        &quot;email&quot;: &quot;hamill.ricardo@example.net&quot;,
-        &quot;email_verified_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-23T14:44:54.000000Z&quot;
-    }
-]</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-users" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-users"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-users"></code></pre>
-</span>
-<span id="execution-error-GETapi-users" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-users"></code></pre>
-</span>
-<form id="form-GETapi-users" data-method="GET"
-      data-path="api/users"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-users', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-users"
-                    onclick="tryItOut('GETapi-users');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-users"
-                    onclick="cancelTryOut('GETapi-users');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-users" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/users</code></b>
-        </p>
-                    </form>
 
     
 
