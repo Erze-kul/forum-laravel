@@ -22,7 +22,7 @@ help:
 
 init: | env docker-build
 
-docker-build: build up vendor seed key
+docker-build: build up vendor key
 
 key:
 	@docker-compose exec --user www-data php-apache php artisan key:generate
