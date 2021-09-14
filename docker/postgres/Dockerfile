@@ -1,4 +1,4 @@
-FROM postgres:13.4
+FROM postgres:11.5
 
 ARG UID
 ARG GID
