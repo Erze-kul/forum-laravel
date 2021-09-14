@@ -11,5 +11,5 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-/postgres-data
+/docker/postgres-data
 .scribe
